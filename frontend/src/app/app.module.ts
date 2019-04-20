@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule, MatTableModule,
-MatSidenavModule, MatCheckboxModule, MatDialogModule } from '@angular/material';
+MatSidenavModule, MatCheckboxModule, MatDialogModule, MatBadgeModule } from '@angular/material';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -17,6 +18,11 @@ import { MatMenuModule } from '@angular/material/menu';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserService } from './service/user.service';
+
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 
 
@@ -32,10 +38,12 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    ToolbarComponent,
     
   ],
   imports: [
     BrowserModule,
+    NoopAnimationsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -55,6 +63,9 @@ const appRoutes: Routes = [
     MatRadioModule,
     MatDialogModule,
     MatMenuModule,
+    AngularFireModule.initializeApp( environment.firebase),
+    AngularFireAuthModule,
+    MatBadgeModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [UserService],

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { LoginService } from './service/login.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor(
+    private afAuth: AngularFireAuth,
+    private loginService: LoginService
+  ) {  }
   
+  ngOnInit() {
+
+  }
+
 }

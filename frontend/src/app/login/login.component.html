@@ -1,7 +1,7 @@
 <mat-toolbar class="tootbar">
   <span>LOGIN</span>
 </mat-toolbar>
-
+<h3>User Logged {{ user?.displayName }}</h3>
 <mat-card class="my-card">
    <mat-card-content>
       <form class="my-form">
@@ -17,5 +17,7 @@
    </mat-card-content>
    <mat-card-actions>
       <button mat-raised-button (click)="login()" color="primary">LOGIN</button>
+      <button *ngIf="!user" mat-raised-button (click)="loginGoogle()" color="primary">Login with Google</button>
+      <button *ngIf="user" mat-raised-button (click)="logout()" color="primary">Loout</button>
    </mat-card-actions>
 </mat-card>
