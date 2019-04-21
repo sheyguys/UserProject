@@ -1,1 +1,1 @@
-# Go x Mongo x Firebase X Angular
+# Go x Mongo x Firebase x Angular
