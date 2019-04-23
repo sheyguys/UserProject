@@ -24,10 +24,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
-
-
-
-
 const appRoutes: Routes = [
   {path:'login' , component:LoginComponent},
   {path:'register' , component:RegisterComponent}
